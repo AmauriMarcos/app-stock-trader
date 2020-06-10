@@ -1,17 +1,13 @@
 <template>
-    <div>
-        <h1>-----Header-----</h1>
-    </div>
+    <h1>-----HEADER-----</h1>
 </template>
+
 <script>
 export default {
     
 }
 </script>
 
-<style lang="scss" scoped>
-    h1{
-        color: red;
-    
-    }
+<style lang="scss">
+
 </style>
