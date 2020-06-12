@@ -1,29 +1,15 @@
 <template>
     <v-app>
-      <v-navigation-drawer app v-model="drawer" temporary>
-        <v-row class="fill-height" no-gutters>
-          
-          <v-list class="grow">
-            <v-list-item
-              v-for="link in links"
-              :key="link"
-              link
-            >
-              <v-list-item-title v-text="link"></v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-row>
+      <v-navigation-drawer app>
+       
       </v-navigation-drawer>
 
-      <v-app-bar app color="anchor">
-        <v-app-bar-nav-icon @click="drawer = true"
-        ></v-app-bar-nav-icon>
+      <v-app-bar app class="bar" >
         <app-Header></app-Header>
       </v-app-bar>
 
       <!-- Sizes your content based upon application components -->
-      <v-content>
-
+      <v-content class='content'> 
         <!-- Provides the application the proper gutter -->
         <v-container fluid>
           <!-- If using vue-router -->
@@ -31,8 +17,10 @@
         </v-container>
       </v-content>
 
-      <v-footer app>
-        <!-- -->
+      <v-footer app color="#ff2e63">
+         <div class="footer">
+            <p>Stock trader 2020 - Vue Course</p>
+         </div>
       </v-footer>
     </v-app> 
 </template>
@@ -45,21 +33,45 @@ export default {
   },
   data(){
     return{
-      drawer: false,
-      items: [
-        { title: 'Home', icon: 'dashboard' },
-        { title: 'About', icon: 'question_answer' },
-      ],
-      links: ['Home', 'Contacts', 'Settings'],
-      mini: true,
+      
     }
-  },
-  created(){
-    console.log(this.$vuetify.application.top)
   }
 }
 </script>
 
 <style lang="scss">
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .content{
+    background-image:linear-gradient(to right bottom, rgba(0,0,0,.6), rgba(0,0,0,.5)), url('https://image.freepik.com/fotos-gratis/mercado-de-acoes-ou-forex-trading-grafico-no-conceito-grafico_73426-180.jpg');
 
+     /* background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8),  rgba($color-primary-dark, 0.8)) ,url("../img/hero.jpg"); */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 15;
+    padding: 1.3rem !important;
+  }
+
+  footer p{
+    font-size: 1rem;
+    color: #000;
+    margin: 0 !important;
+
+  }
+
+  .bar{
+    display: flex !important;
+    justify-content: space-between;
+  }
 </style>
