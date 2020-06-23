@@ -25,13 +25,13 @@ export default {
 <style lang="scss">
     ul{
         display: flex;
-        list-style: none;
-        
+        list-style: none;       
     }
 
     li{
         margin-right: 1rem;
         cursor: pointer;
+        color: #ccc;
     }
 
     li:first-child{
@@ -61,6 +61,7 @@ export default {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        padding: .3rem .8rem;
     }
 
     .select{

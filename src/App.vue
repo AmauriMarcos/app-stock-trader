@@ -1,28 +1,16 @@
 <template>
-    <v-app>
-      <v-navigation-drawer app>
-       
-      </v-navigation-drawer>
-
-      <v-app-bar app class="bar" >
-        <app-Header></app-Header>
-      </v-app-bar>
-
-      <!-- Sizes your content based upon application components -->
-      <v-content class='content'> 
-        <!-- Provides the application the proper gutter -->
-        <v-container fluid>
-          <!-- If using vue-router -->
+    <div class="main-container">
+       <header>
+          <app-header></app-header>
+       </header>
+       <div class="status">
+          More info
+       </div>
+       <div class="content">
           <router-view></router-view>
-        </v-container>
-      </v-content>
-
-      <v-footer app color="#ff2e63">
-         <div class="footer">
-            <p>Stock trader 2020 - Vue Course</p>
-         </div>
-      </v-footer>
-    </v-app> 
+       </div>
+       <footer>2020 - Footer</footer>
+    </div>
 </template>
 
 <script>
@@ -46,32 +34,44 @@ export default {
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
   }
-  .content{
-    background-image:linear-gradient(to right bottom, rgba(0,0,0,.6), rgba(0,0,0,.5)), url('https://image.freepik.com/fotos-gratis/mercado-de-acoes-ou-forex-trading-grafico-no-conceito-grafico_73426-180.jpg');
 
-     /* background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8),  rgba($color-primary-dark, 0.8)) ,url("../img/hero.jpg"); */
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+  body{
+    
+  }
+  .main-container{
+    padding: 3% 7%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  /* background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8),  rgba($color-primary-dark, 0.8)) ,url("../img/hero.jpg"); */
+    gap: .3rem;
+  }
+
+  header{
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    background-color: black;
+    padding: .8rem .2rem;
+  }
+
+  .status{
+    grid-column: 1/4;
+    grid-row: 2/3;
+    background-color: rgb(236, 126, 126);
+    width: 40vh;
+
+  }
+
+  .content{
+    grid-column: 4/-1;
+    grid-row: 2/3;
+    padding: 2% 5%;
   }
 
   footer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 15;
-    padding: 1.3rem !important;
+    grid-column: 1/-1;
+    grid-row: 3/4;
+    padding: 1.5rem;
+    background-color: rgb(236, 126, 126);
   }
 
-  footer p{
-    font-size: 1rem;
-    color: #000;
-    margin: 0 !important;
-
-  }
-
-  .bar{
-    display: flex !important;
-    justify-content: space-between;
-  }
 </style>
